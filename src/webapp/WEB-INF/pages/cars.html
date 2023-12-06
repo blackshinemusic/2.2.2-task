@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Car list (Best cars)</title>
+</head>
+<body>
+<h1>Car list (Best cars)</h1>
+<br/><br/>
+<div>
+  <table border="1">
+    <tr>
+      <th>Car model</th>
+      <th>Car type</th>
+      <th>Car gosnomer</th>
+    </tr>
+    <tr th:each="car : ${cars}">
+      <td th:utext="${car.getModel()}">...</td>
+      <td th:utext="${car.getType()}">...</td>
+      <td th:utext="${car.getGosnomer()}">...</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
