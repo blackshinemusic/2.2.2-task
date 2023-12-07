@@ -8,14 +8,14 @@ import web.service.CarService;
 
 @Controller
 public class CarController {
-private final CarService carService;
-public CarController(CarService carService) {
-    this.carService = carService;
-}
-   @GetMapping(value = "/")
+    private final CarService carService;
+    public CarController(CarService carService) {
+        this.carService = carService;
+    }
+    @GetMapping(value = "/cars")
     public String getCars(@RequestParam(value = "count", defaultValue = "5") int count, ModelMap entity) {
-    entity.addAttribute("cars", carService.getCars(count));
-    return "cars";
-   }
+        entity.addAttribute("cars", carService.getCars(count));
+        return "cars";
+    }
 
 }
